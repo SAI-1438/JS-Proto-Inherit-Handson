@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Inheritance-Prototype Handson</title>
+</head>
+<body>
+    <h1>Q1.Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype</h1>
+    <pre>const parent = {
+        Name:"saikiran",
+        Age:"age-25",
+        person : function abc(){
+            console.log(this.Name+" "+this.Age);
+        }
+    }
+    const child = {
+        __proto__: parent
+    }
+    child.person();
+    </pre>
+    <h1>Q2.Write code to explain prototype chaining</h1>
+    <pre>const obj1 = {
+        name:"saikiran"
+    }
+    const obj2 = {
+        __proto__:obj1,
+        age:25
+    }
+    const obj3 = {
+        __proto__:obj2
+    }
+    console.log(obj3.name)
+    console.log(obj3.age)
+    </pre>
+    <h1>Q3.Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays</h1>
+    <pre>const Add = {
+        sum : function(arr){
+            let ans = 0;
+            for(let i=0; i< arr.length; i++){
+                ans += arr[i];
+            }
+            console.log(ans);
+        }
+    }
+    Add.sum([1,2,3])
+    </pre>
+    <h1>Q4.Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h1>
+    <pre>const user = {
+        name: 'Alex',
+        age: 30
+      }
+      
+      const props = Object.getOwnPropertyNames(user)
+      
+      console.log(props);
+    </pre>
+    
+<script src="./index.js"></script>    
+</body>
+</html>
